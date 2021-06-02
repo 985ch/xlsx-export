@@ -1,11 +1,11 @@
 {
-  "name": "xlsx-export",
+  "name": "xlsx-export-9",
   "version": "0.0.1",
   "description": "A Node.js package for exporting data to xlsx",
   "keywords": [
     "export",
     "xlsx",
-    "generate"
+    "excel"
   ],
   "dependencies": {
     "lodash": "^4.17.21",
