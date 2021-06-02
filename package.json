@@ -1,0 +1,40 @@
+{
+  "name": "xlsx-export",
+  "version": "0.0.1",
+  "description": "A Node.js package for exporting data to xlsx",
+  "keywords": [
+    "export",
+    "xlsx",
+    "generate"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "node-xlsx": "^0.16.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-egg": "^9.0.0",
+    "mocha": "^8.4.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "mocha test",
+    "lint": "eslint ."
+  },
+  "files": [
+    "index.js"
+  ],
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/985ch/xlsx-export.git"
+  },
+  "homepage": "https://github.com/985ch/xlsx-export#readme",
+  "author": "985ch",
+  "license": "MIT"
+}

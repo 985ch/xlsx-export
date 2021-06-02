@@ -1,0 +1,6 @@
+{
+  "env": {
+    "es2020": false
+  },
+  "extends": "eslint-config-egg"
+}
