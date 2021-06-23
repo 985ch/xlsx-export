@@ -1,6 +1,6 @@
 {
   "name": "xlsx-export-9",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A Node.js package for exporting data to xlsx",
   "keywords": [
     "export",

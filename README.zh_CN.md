@@ -17,26 +17,26 @@
 [download-image]: https://img.shields.io/npm/dm/xlsx-export-9.svg?style=flat-square
 [download-url]: https://npmjs.org/package/xlsx-export-9
 
-A Node.js library for exporting large amounts of data to xlsx files, supporting page reading and different data splitting methods, based on [node-xlsx](https://github.com/mgcrea/node-xlsx).
+一个Node.js库，用于导出大量数据到xlsx文件，支持分页读取数据以及多种数据拆分方式，基于[node-xlsx](https://github.com/mgcrea/node-xlsx)实现。
 
-## Install
+## 安装
 
 ```bash
 $ npm i xlsx-export-9 --save
 ```
 
-## Usage
+## 使用方法
 ```js
 'use strict';
 
 const xlsxExport = require('xlsx-export-9');
 
-const raws = [{ name: 'xxx', sex: 'male', job: 'programer' }];
+const raws = [{ name: '某某', sex: '男', job: '码农' }];
 
 const options = {
   tableLimit: 10000,
   readLimit: 1000,
-  headers: [ 'name', 'sex', 'job' ],
+  headers: [ '姓名', '性别', '职业' ],
   splitType: 'file',
   fileName: 'sample',
 };
@@ -50,31 +50,30 @@ xlsxExport(async (offset, limit) => {
   return datas;
 }, options);
 ```
-More usage can be found in [test.js](./test.js)
+在[test.js](./test.js)中可以看到更多用法
 
 ## xlsxExport(getData, options)
-* /*getData*/ is an asynchronous function that accepts two parameters, offset and limit, and returns a two-dimensional array
-* /*options*/ is an object that determines how to export data to a file
-* Return a Promise object
+* getData是一个异步方法，接受offset和limit两个参数，返回一个二维数组
+* options是一个对象，决定如何导出数据到文件
+* 返回一个Promise对象
 
 ## 选项说明
 
 | 选项 | 默认值 | 含义 |
 |:----|:-----|:----|
-| offset | 0 | Initial offset |
-| count | 0 | Maximum data acquisition amount, when it is 0, it means that the acquisition is complete |
-| tableLimit | 50000 | Maximum number of rows in a single sheet |
-| readLimit | 1000 | Number of data obtained at a time |
-| headers | null | The header, which can be a string array or null |
-| splitType | 'file' | Split mode,'file' means split by file,'sheet' means split by sheet |
-| splitName | (name, index) => name + '_' + index | Function to calculate the name of a table or file after splitting |
-| sheetName | 'Sheet' | Sheet name |
-| fileName | 'Export' | File name |
-| output | async (file, buffer) => await fs.writeFile(file + '.xlsx', buffer) | Output function |
-| enableEmptyFile | false | Whether to allow empty files, if not, the xlsx file will not be generated when the data is empty |
+| offset | 0 | 初始数据偏移量 |
+| count | 0 | 最大读取数量，为0时表示一直读完为止 |
+| tableLimit | 50000 | 单个表行数限制 |
+| readLimit | 1000 | 单次获取数据条数 |
+| headers | null | 表头，可以为字符串数组或null |
+| splitType | 'file' | 拆分方式，'file'为按文件拆分，'sheet'为按表拆分 |
+| splitName | (name, index) => name + '_' + index | 一个方法，用于计算表或文件拆分后的名字 |
+| sheetName | 'Sheet' | 表名 |
+| fileName | 'Export' | 文件名 |
+| output | async (file, buffer) => await fs.writeFile(file + '.xlsx', buffer) | 导出函数 |
+| enableEmptyFile | false | 是否允许空文件，若不允许，则数据为空时不会生成xlsx文件 |
 
-
-## Unit tests
+## 测试
 
 ```sh
 npm test
@@ -83,4 +82,3 @@ npm test
 ## License
 
 [MIT](LICENSE)<br />
-This README was translate by [google](https://translate.google.cn)
